@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <title>🎥 AI Text-to-Video Generator</title>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2.2em;
+      }
+      .subtitle {
+        color: #666;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 18px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+      }
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+      button {
+        width: 100%;
+        padding: 18px;
+        font-size: 18px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover:not(:disabled) {
+        transform: translateY(-2px);
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .message {
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .error {
+        background: #fee2e2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+      }
+      .demo {
+        text-align: center;
+        margin-top: 30px;
+        opacity: 0.8;
+        font-size: 0.9em;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎥 AI Text-to-Video</h1>
+      <p class="subtitle">
+        Amrutha T.S. | Python Flask + MoviePy | Hackathon Demo
+      </p>
+
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="message error">{{ messages[0] }}</div>
+      {% endif %} {% endwith %}
+
+      <form method="POST">
+        <input
+          type="text"
+          name="text"
+          placeholder="Amrutha wins Ecoverse Makathon 2026!"
+          maxlength="200"
+          required
+        />
+        <button type="submit">🚀 GENERATE VIDEO (20s)</button>
+      </form>
+
+      <div class="demo">
+        <p>✨ Smooth scrolling text → Professional MP4 download!</p>
+      </div>
+    </div>
+  </body>
+</html>
